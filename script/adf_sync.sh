@@ -8,7 +8,7 @@ rm -rf adf_cicd/.git*
 cp -r adf_cicd/* .
 git add .
 git commit -m "Pushing latest commit in Prod to lower environments"
-git push --repo https://calebu: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@github.com/calebu/adf_qa_.git
+#git push --repo https://calebu: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@github.com/calebu/adf_qa_.git
 
 #git remote set-url origin https://github.com/calebu/adf_qa.git
 #git push -u origin master
