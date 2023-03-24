@@ -6,19 +6,16 @@
 				"name": "chronicles_task",
 				"type": "Wait",
 				"dependsOn": [],
-				"userProperties": [
-					{
-						"name": "team_lead",
-						"value": "Hayley"
-					},
-					{
-						"name": "Senior Engr",
-						"value": "Dominic"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"waitTimeInSeconds": 20
 				}
+			},
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"annotations": []
