@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-# Create some files and directories in the current folder
-echo 'hello' > hello.txt
-mkdir subdir
-echo 'world' > subdir/world.txt
-
-# Add some symlinks (which we should dereference properly when archiving)
-ln -s subdir subdir-link
-ln -s hello.txt bonjour.txt
+# Clone the prod ADF repo
+git clone https://github.com/calebu/adf_cicd.git
+git branch --set-upstream-to https://github.com/calebu/adf_qa.git
+git push -u origin main
