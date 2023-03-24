@@ -16,3 +16,7 @@ jobs:
     - name: Run script file
       run: pwd && ls && chmod +x ./public/scripts/test.sh
       shell: bash
+    - uses: actions/checkout@v2
+    - name: Run2
+      run: ./public/scripts/test.sh
+      shell: bash
