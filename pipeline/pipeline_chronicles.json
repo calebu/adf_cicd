@@ -3,21 +3,31 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "the_only_wait_tasks",
+				"name": "chronicles_task",
 				"type": "Wait",
 				"dependsOn": [],
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Team_Lead",
+						"value": "Hayley"
+					},
+					{
+						"name": "Senior_Engr",
+						"value": "Dominic"
+					}
+				],
 				"typeProperties": {
 					"waitTimeInSeconds": 20
 				}
 			},
 			{
-				"name": "Wait2",
-				"type": "Wait",
+				"name": "Fail1",
+				"type": "Fail",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"message": "Failed",
+					"errorCode": "-1"
 				}
 			}
 		],
