@@ -11,7 +11,7 @@ cd adf_qa
 git clone https://github.com/calebu/adf_cicd.git
 rm -rf adf_cicd/.git*
 cp -r adf_cicd/* .
-rm -rf adf_cicd/
+#rm -rf adf_cicd/
 # Push to lower environment
 #chmod 400 ./key_rsa && ssh-add ./key_rsa
 
