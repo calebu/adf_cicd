@@ -14,5 +14,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
-      run: echo ${{ env.MY_VARIABLE }} && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
+      run: echo ${{ env.PAT }} && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
       shell: bash
