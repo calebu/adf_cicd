@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run shelsl sscript
+    - name: step1
       run: pwd
       shell: bash
       
-    - name: Run shelsl sscript
+    - name: step2
       run: echo "Hello"
       shell: bash
       
