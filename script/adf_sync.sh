@@ -3,10 +3,10 @@
 # Clone the prod ADF repo
 git config --global user.email "calebadeyemi@gmail.com"
 git config --global user.name "Caleb Adeyemi"
-echo $1
-#eval `ssh-agent -s`
-#chmod 400 ./key_rsa
-#ssh-add ./key_rsa
+
+eval `ssh-agent -s`
+chmod 400 ./key_rsa
+ssh-add ./key_rsa
 git clone https://github.com/calebu/adf_qa.git
 cd adf_qa
 git clone https://github.com/calebu/adf_cicd.git
