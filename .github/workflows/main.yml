@@ -31,6 +31,6 @@ jobs:
       shell: bash
       
     - name: Run shell script
-      run: ./script/new-artifact.sh
+      run: ../script/new-artifact.sh
       shell: bash
       
