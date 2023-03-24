@@ -3,7 +3,6 @@
 # Clone the prod ADF repo
 git config --global user.email "calebadeyemi@gmail.com"
 git config --global user.name "Caleb Adeyemi"
-echo '${{ secrets.PAT }}'
 eval `ssh-agent -s`
 chmod 400 ./key_rsa
 ssh-add ./key_rsa
