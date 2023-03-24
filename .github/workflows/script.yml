@@ -14,5 +14,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
-      run: echo${{ vars }} && echo ${{ vars.PAT }} && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
+      run: chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.PAT }}
       shell: bash
