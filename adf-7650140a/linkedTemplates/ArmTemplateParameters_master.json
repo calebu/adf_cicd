@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "adf-7650140a"
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=azure-sql-3143.database.windows.net;Initial Catalog=azure-sql-3143"
+		},
 		"containerUri": {
 			"value": ""
 		},
