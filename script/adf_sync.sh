@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Clone the prod ADF repo
-git clone https://github.com/calebu/adf_qa.git
+git config --global user.email "calebadeyemi@gmail.com"
+git config --global user.name "Caleb Adeyemi"
 cd adf_qa
 git clone https://github.com/calebu/adf_cicd.git
 rm -rf adf_cicd/.git*
