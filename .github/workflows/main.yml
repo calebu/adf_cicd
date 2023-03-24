@@ -14,39 +14,25 @@ on:
   pull_request:
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+  update_lower_adf_environments:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Generate files
-      run: mkdir artifact && mkdir artifact2 && cd artifact && ../script/new-artifact.sh
-      shell: bash
-
-    - name: Upload Pages artifact
+    - name: step1
+      run: pwd
       uses: ./
-      with:
-        path: artifact
-
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-          name: github-pages
-          path: artifact2
-
-    - name: Extract artifact
-      run: tar -xf artifact2/artifact.tar -C artifact2 && rm artifact2/artifact.tar
       shell: bash
-
-    - name: Compare files
-      run: diff -qr artifact artifact2
+      
+    - name: step2
+      run: echo "Hello" && ls
+      uses: ../
       shell: bash
-
-    - name: Check for absence of symlinks
-      run: if [ $(find artifact2 -type l | wc -l) != 0 ]; then echo "Symlinks found"; exit 1; fi
+      
+    - name: Run shell sscript
+      run: ls ../adf_cicd
       shell: bash
+      
+    - name: Run shell script
+      run: ../script/new-artifact.sh
+      shell: bash
+      
