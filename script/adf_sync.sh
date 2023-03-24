@@ -13,7 +13,6 @@ git clone https://github.com/calebu/adf_qa.git
 cd adf_qa
 rm -rf ../adf_cicd/.git*
 cp -r ../adf_cicd/* .
-#rm -rf adf_cicd/
 
 # Push to lower environment
 
@@ -23,5 +22,3 @@ git add .
 git commit -m "Pushing latest commit in Prod to lower environments"
 
 git push
-#git push --repo https:/github.com/calebu/adf_qa_.git
-
