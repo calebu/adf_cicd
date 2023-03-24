@@ -23,7 +23,7 @@ jobs:
       shell: bash
       
     - name: step2
-      run: echo "Hello"
+      run: echo "Hello" && ls
       shell: bash
       
     - name: Run shell sscript
