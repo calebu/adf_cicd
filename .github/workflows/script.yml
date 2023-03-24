@@ -22,3 +22,6 @@ jobs:
     - name: Runss script file
       run: chmod +x ./public/scripts/test.sh
       shell: bash
+    - name: Runsss script file
+      run: ./public/scripts/test.sh
+      shell: bash
