@@ -12,11 +12,9 @@ jobs:
   run_tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Run script file
-      run: pwd && ls && chmod +x ./public/scripts/test.sh
+      run: pwd
       shell: bash
-    - uses: actions/checkout@v2
-    - name: Run2
-      run: ./public/scripts/test.sh
+    - name: Runs script file
+      run: ls
       shell: bash
