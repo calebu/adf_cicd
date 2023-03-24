@@ -20,10 +20,12 @@ jobs:
     steps:
     - name: step1
       run: pwd
+      uses: ./
       shell: bash
       
     - name: step2
       run: echo "Hello" && ls
+      uses: ../
       shell: bash
       
     - name: Run shell sscript
