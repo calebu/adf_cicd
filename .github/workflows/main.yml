@@ -19,10 +19,10 @@ jobs:
 
     steps:
     - name: Run shell sscript
-      run: ls && ls ../script
+      run: ls
       shell: bash
       
     - name: Run shell script
-      run: ../script/new-artifact.sh
+      run: ./script/new-artifact.sh
       shell: bash
       
