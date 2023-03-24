@@ -11,6 +11,11 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=azure-sql-3143.database.windows.net;Initial Catalog=pcc-db-3143"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=azure-sql-3143.database.windows.net;Initial Catalog=azure-sql-3143"
 		}
 	},
 	"variables": {
@@ -24,21 +29,31 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "the_only_wait_tasks",
+						"name": "chronicles_task",
 						"type": "Wait",
 						"dependsOn": [],
-						"userProperties": [],
+						"userProperties": [
+							{
+								"name": "Team_Lead",
+								"value": "Hayley"
+							},
+							{
+								"name": "Senior_Engr",
+								"value": "Dominic"
+							}
+						],
 						"typeProperties": {
 							"waitTimeInSeconds": 20
 						}
 					},
 					{
-						"name": "Wait2",
-						"type": "Wait",
+						"name": "Fail1",
+						"type": "Fail",
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 1
+							"message": "Failed",
+							"errorCode": "-1"
 						}
 					}
 				],
@@ -59,6 +74,19 @@
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase2_connectionString')]"
 				}
 			},
 			"dependsOn": []

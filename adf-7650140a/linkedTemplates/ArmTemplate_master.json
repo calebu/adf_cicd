@@ -12,6 +12,11 @@
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=azure-sql-3143.database.windows.net;Initial Catalog=pcc-db-3143"
 		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=azure-sql-3143.database.windows.net;Initial Catalog=azure-sql-3143"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -41,6 +46,9 @@
 					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
 					}
 				}
 			},
