@@ -24,6 +24,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: List files
+      run: ls
+      shell: bash
+
     - name: Generate files
       run: mkdir artifact && mkdir artifact2 && cd artifact && ../script/new-artifact.sh
       shell: bash
