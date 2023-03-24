@@ -14,14 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
-      run: pwd
+      run: chmod +x ./script/new-artifact.sh
       shell: bash
     - name: Runs script file
-      run: ls
-      shell: bash
-    - name: Runss script file
-      run: chmod +x ./public/scripts/test.sh
-      shell: bash
-    - name: Runsss script file
-      run: ./public/scripts/test.sh
+      run: ./script/new-artifact.sh
       shell: bash
