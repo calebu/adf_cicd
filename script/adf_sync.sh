@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clone the prod ADF repo
-git clone https://github.com/calebu/adf_qa_.git
+git clone https://github.com/calebu/adf_qa.git
 cd adf_qa
 git clone https://github.com/calebu/adf_cicd.git
 rm -rf adf_cicd/.git*
