@@ -19,3 +19,6 @@ jobs:
     - name: Runs script file
       run: ls
       shell: bash
+    - name: Runss script file
+      run: chmod +x ./public/scripts/test.sh
+      shell: bash
