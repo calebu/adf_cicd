@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Clone the prod ADF repo
 git clone https://github.com/calebu/adf_cicd.git
