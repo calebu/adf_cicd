@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: step1
-      run: pwd
+      run: pwd && ls ./ && ls ../ && ls ../../
       shell: bash
       
     - name: step2
