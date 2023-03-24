@@ -9,7 +9,7 @@ on:
   pull_request:
 
 jobs:
-  run_tests:
+  push_adf_changes:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
