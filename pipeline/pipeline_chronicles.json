@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "A_wait_task",
+				"name": "the_only_wait_task",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],
