@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: step1
-      run: pwd && ls
+      run: pwd
       shell: bash
       
     - name: step2
@@ -27,7 +27,7 @@ jobs:
       shell: bash
       
     - name: Run shell sscript
-      run: ls ../
+      run: ls ../adf_cicd
       shell: bash
       
     - name: Run shell script
