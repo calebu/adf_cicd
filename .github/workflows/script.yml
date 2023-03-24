@@ -17,7 +17,7 @@ jobs:
       run: echo ${{ secrets }}
       shell: bash
     - name: Run script file
-      run: echo ${{ var.PAT }}
+      run: echo ${{ vars.PAT }}
       shell: bash
     - name: Run script file
       run: echo ${{ env.PAT }} && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ secrets.PAT }}
