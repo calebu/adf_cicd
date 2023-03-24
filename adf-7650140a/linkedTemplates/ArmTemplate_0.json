@@ -24,7 +24,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Wait1",
+						"name": "Wait_task",
 						"type": "Wait",
 						"dependsOn": [],
 						"userProperties": [],
