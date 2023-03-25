@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
-        chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
+        chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       shell: bash
