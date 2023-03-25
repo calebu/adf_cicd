@@ -17,7 +17,7 @@ jobs:
       run: |
         if [ "$PAT" -eq "the pat" ]
         then
-          echo $PAT
+          echo ${{ vars.PAT }}
         fi
         chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
       shell: bash
