@@ -4,7 +4,7 @@
 git config --global user.email "calebadeyemi@gmail.com"
 git config --global user.name "Caleb Adeyemi"
 
-eval `ssh-agent -s`
+#eval `ssh-agent -s`
 
 rm -rf adf_cicd/
 git clone https://github.com/calebu/adf_cicd.git
