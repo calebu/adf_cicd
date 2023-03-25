@@ -14,5 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
-      run: chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
+      run: |
+        if [ "$PAT" -eq "the pat" ]
+        echo $PAT
+        chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
       shell: bash
