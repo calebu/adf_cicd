@@ -8,10 +8,11 @@ eval `ssh-agent -s`
 
 rm -rf adf_cicd/
 git clone https://github.com/calebu/adf_cicd.git
-ls adf_cicd/
 git clone https://github.com/calebu/adf_qa.git
 cd adf_qa
 rm -rf ../adf_cicd/.git*
+rm -rf ../adf_cicd/script
+rm -rf ../adf_cicd/*.sh
 cp -r ../adf_cicd/* .
 
 # Push to lower environment
