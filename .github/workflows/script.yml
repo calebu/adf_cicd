@@ -12,7 +12,6 @@ jobs:
   push_adf_changes:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Run script file
       run: |
         if [ "$PAT" -eq "the pat" ]
