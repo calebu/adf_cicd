@@ -16,6 +16,8 @@ jobs:
     - name: Run script file
       run: |
         if [ "$PAT" -eq "the pat" ]
-        echo $PAT
+        then
+          echo $PAT
+        fi
         chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
       shell: bash
