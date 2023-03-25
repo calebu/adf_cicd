@@ -16,6 +16,7 @@ rm -rf ../adf_cicd/*.sh
 cp -r ../adf_cicd/* .
 
 # Push to lower environment
+# Private key needs to be present in key_rsa file, and added to the destination git repo
 
 chmod 400 ./key_rsa && SSH_ASKPASS=/path/to/ssh_give_pass.sh ssh-add ./key_rsa <<< $1
 git remote set-url origin git@github.com:calebu/adf_qa.git
