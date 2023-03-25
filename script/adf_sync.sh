@@ -17,7 +17,7 @@ cp -r ../adf_cicd/* .
 
 # Push to lower environment
 
-chmod 400 ./key_rsa && SSH_ASKPASS=/path/to/ssh_give_pass.sh ssh-add ./key_rsa <<< "what"
+chmod 400 ./key_rsa && SSH_ASKPASS=/path/to/ssh_give_pass.sh ssh-add ./key_rsa <<< $1
 git remote set-url origin git@github.com:calebu/adf_qa.git
 git add .
 git commit -m "Pushing latest commit in Prod to lower environments"
