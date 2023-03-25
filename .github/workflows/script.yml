@@ -14,9 +14,5 @@ jobs:
     steps:
     - name: Run script file
       run: |
-        if [ "$PAT" -eq "the pat" ]
-        then
-          echo ${{ vars.PAT }}
-        fi
         chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh
       shell: bash
