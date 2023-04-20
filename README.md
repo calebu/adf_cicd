@@ -5,15 +5,14 @@
 + Workflow overview
   ![ADF github connection](https://github.com/calebu/adf_cicd/blob/main/documentation/workflow.png)
 + Initial setup (connecting the dev instance to the github repo)
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/git.png)
 + ADF authoring
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
   - *feature branch creation*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/feature-branch.png)
   - *global parameters*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/global-parameters.png)
 + Pull Request
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/pr.png)
   - *Scenario 1 - PR is approved*
   ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
   - *Scenario 2 - Review is requested*
