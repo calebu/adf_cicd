@@ -11,9 +11,10 @@ on:
 jobs:
   push_adf_changes:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
-        chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
+        python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       shell: bash
