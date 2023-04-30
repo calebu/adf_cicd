@@ -31,16 +31,6 @@
 				}
 			},
 {  
-   "name":"MyForEachActivityName",
-   "type":"ForEach",
-   "typeProperties":{  
-      "isSequential":"true",
-        "items": {
-            "value": "@pipeline().parameters.mySinkDatasetFolderPathCollection",
-            "type": "Expression"
-        },
-      "activities":[  
-         {  
             "name":"MyCopyActivity",
             "type":"Copy",
             "typeProperties":{  
@@ -62,12 +52,7 @@
                   "parameters":{  
                      "MyFolderPath":"@item()"
                   }
-               }
-            ]
-         }
-      ]
-   }
-}			
+               }	
 		],
 		"annotations": []
 	}
