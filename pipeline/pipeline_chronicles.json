@@ -29,30 +29,7 @@
 					"message": "Failed",
 					"errorCode": "-1"
 				}
-			},
-{  
-            "name":"MyCopyActivity",
-            "type":"Copy",
-            "typeProperties":{  
-               ...
-            },
-            "inputs":[  
-               {  
-                  "referenceName":"MyDataset",
-                  "type":"DatasetReference",
-                  "parameters":{  
-                     "MyFolderPath":"@pipeline().parameters.mySourceDatasetFolderPath"
-                  }
-               }
-            ],
-            "outputs":[  
-               {  
-                  "referenceName":"MyDataset",
-                  "type":"DatasetReference",
-                  "parameters":{  
-                     "MyFolderPath":"@item()"
-                  }
-               }	
+			}
 		],
 		"annotations": []
 	}
