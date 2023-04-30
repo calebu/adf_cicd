@@ -29,8 +29,40 @@
 					"message": "Failed",
 					"errorCode": "-1"
 				}
+			},
+			{
+				"name": "ForEachActiv",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('InputVar')",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Wait1",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					]
+				}
 			}
 		],
+		"variables": {
+			"InputVar": {
+				"type": "Array",
+				"defaultValue": [
+					"['A', 'B', 'C', 'D']"
+				]
+			}
+		},
 		"annotations": []
 	}
 }
