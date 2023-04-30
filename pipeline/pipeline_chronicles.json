@@ -21,16 +21,6 @@
 				}
 			},
 			{
-				"name": "Fail1",
-				"type": "Fail",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"message": "Failed",
-					"errorCode": "-1"
-				}
-			},
-			{
 				"name": "ForEachActiv",
 				"type": "ForEach",
 				"dependsOn": [],
@@ -52,6 +42,16 @@
 							}
 						}
 					]
+				}
+			},
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "Failed",
+					"errorCode": "-1"
 				}
 			}
 		],
