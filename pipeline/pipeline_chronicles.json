@@ -59,7 +59,10 @@
 			"InputVar": {
 				"type": "Array",
 				"defaultValue": [
-					"['A', 'B', 'C', 'D']"
+					"A",
+					"B",
+					"C",
+					"D"
 				]
 			}
 		},
