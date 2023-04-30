@@ -40,12 +40,37 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Wait1",
-							"type": "Wait",
+							"name": "If Condition1",
+							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"waitTimeInSeconds": 1
+								"expression": {
+									"value": "@equals(empty(item().name),true)",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Wait_False",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 1
+										}
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Wait_True",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 1
+										}
+									}
+								]
 							}
 						}
 					]
@@ -73,10 +98,18 @@
 			"InputVar": {
 				"type": "Array",
 				"defaultValue": [
-					"A",
-					"B",
-					"C",
-					"D"
+					{
+						"name": "caleb"
+					},
+					{
+						"gender": "male"
+					},
+					{
+						"name": ""
+					},
+					{
+						"age": "37"
+					}
 				]
 			}
 		},
