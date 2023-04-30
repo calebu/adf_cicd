@@ -23,7 +23,14 @@
 			{
 				"name": "ForEachActiv",
 				"type": "ForEach",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "chronicles_task",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -47,7 +54,14 @@
 			{
 				"name": "Fail1",
 				"type": "Fail",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "ForEachActiv",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"message": "Failed",
