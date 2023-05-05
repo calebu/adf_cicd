@@ -3,3 +3,4 @@
 # READ Secret from STDIN and echo it
 read SECRET
 echo $SECRET
+#end
