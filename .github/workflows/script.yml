@@ -14,9 +14,9 @@ jobs:
     environment: dev
     steps:
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
     - name: Run script file
+#        cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       run: |
-        cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
+          echo "::set-output name=all::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
+          echo "::set-output name=ts::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
       shell: bash
