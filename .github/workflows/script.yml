@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Run script file2
       run: |
-        ls && cat ./.github/workflows/script.yml && echo "end"
+        ls && echo "end"
       shell: bash
     - uses: actions/checkout@v2
     - name: Run script file
