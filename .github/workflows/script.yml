@@ -17,6 +17,11 @@ jobs:
     - name: Run script file
 #        cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       run: |
-          echo "Hello" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
-          echo "Hi" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
+          current_commit=`git log -n 1 --pretty=format:%H`
+          echo $current_commit
+          last_deps_mod_commit=`git log -n 1 --pretty=format:%H -- composer.json`
+          echo $last_deps_mod_commit
+#      run: |
+#          echo "Hello" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
+#          echo "Hi" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
       shell: bash
