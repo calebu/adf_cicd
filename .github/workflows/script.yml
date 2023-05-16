@@ -13,11 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
-    - name: Run script file2
-      run: |
-        ls && echo "end"
-      shell: bash
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Run script file
       run: |
         cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
