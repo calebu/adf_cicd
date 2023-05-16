@@ -13,8 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
+    - name: Run script file2
+      run: |
+        cat .github/workflows/script.yml && echo "end"
+      shell: bash
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
-        gh pr view 21 --json files && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
+        cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       shell: bash
