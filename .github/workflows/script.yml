@@ -14,19 +14,16 @@ jobs:
     environment: dev
     steps:
     - uses: actions/checkout@v2
+      name: Checout previous commit
       with:
         ref: adf_documentation
+        path: adf_documentation
+    - uses: actions/checkout@v2
+      name: Checout current commit
+      with:
+        ref: main
+        path: main
     - name: Run script file
-#        cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       run: |
-        ls && cat ./.github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
-#          current_commit=`git log -n 1 --pretty=format:%H`
-#          echo $current_commit
-#          last_deps_mod_commit=`git log -n 1 --pretty=format:%H -- composer.json`
-#          echo $last_deps_mod_commit
-#          echo "Hello" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
-#          echo $last_deps_mod_commit
-#      run: |
-#          echo "Hello" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
-#          echo "Hi" && echo "$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
+        ls ./main && ls ./adf_documentation && cat ./.github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       shell: bash
