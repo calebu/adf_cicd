@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        path: adf_documentation 
+        ref: my-branch
     - name: Run script file
 #        cat .github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       run: |
