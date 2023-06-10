@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: print body
       env:
-#        BODY: ${{ toJson(github) }}
+#        BODY: ${{ toJson(github) }} 
         BODY: ${{ github.event.pull_request.body }}
       run: echo "$BODY"
       shell: bash
