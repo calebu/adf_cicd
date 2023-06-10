@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
-    - name: print body
-      env:
+#    - name: print body
+#      env:
 #        BODY: ${{ toJson(github) }} 
-        BODY: ${{ github.event.pull_request.body }}
-      run: echo "$BODY"
-      shell: bash
+#        BODY: ${{ github.event.pull_request.body }}
+#      run: echo "$BODY"
+#      shell: bash
     - uses: actions/checkout@v2
       name: Checkout previous commit
       with:
