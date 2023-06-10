@@ -17,7 +17,8 @@ jobs:
     - name: print body
       env:
         BODY: ${{ github.event.comment.body }}
-      git run: echo "$BODY"
+      run: echo "$BODY"
+      shell: bash
     - uses: actions/checkout@v2
       name: Checout previous commit
       with:
