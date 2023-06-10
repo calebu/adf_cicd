@@ -32,5 +32,5 @@ jobs:
         path: main
     - name: Run script file
       run: |
-        ls && cat ./.github/workflows/script.yml && ls && python ./script/test_pipeline.py "${{ vars.REQUIRED_COMPONENTS }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
+        python ./script/jira_ticket_checker.py "$BODY" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       shell: bash
