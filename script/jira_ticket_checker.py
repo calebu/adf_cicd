@@ -7,7 +7,7 @@ f = open('jira_tickets.json')
 data = json.load(f)
 
 for i in data:
-	if i['ticket'] == pr_comment && i['status'] in valid_statuses:
+	if i['ticket'] == pr_comment and i['status'] in valid_statuses:
 		print(0)
 	
 	if i['ticket'] == pr_comment:
