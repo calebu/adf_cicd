@@ -6,8 +6,6 @@ on:
 #  push:
 #    branches:
 #      - main
-
-
   pull_request:
     branches:
       - main
@@ -19,7 +17,7 @@ jobs:
     - name: print body
       env:
         BODY: ${{ github.event.comment.body }}
-      run: echo "$BODY"
+      run: echo "$BODY" && echo ${{ github.event }} && echo ${{ github.event.comment }}
       shell: bash
     - uses: actions/checkout@v2
       name: Checout previous commit
