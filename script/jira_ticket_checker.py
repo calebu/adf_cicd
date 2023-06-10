@@ -10,8 +10,8 @@ print(f'Argument is {pr_comment}')
 
 for i in data:
     if i['ticket'] == pr_comment and i['status'] in valid_statuses:
-        print(0)
+        print("")
         exit()
     
 f.close()
-print(1)
+print(f"JIRA ticket {pr_comment} not found, or JIRA ticket not in Progress/Development state")
