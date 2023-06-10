@@ -32,5 +32,5 @@ jobs:
         path: main
     - name: Run script file
       run: |
-        find . -type f && python ./main/script/jira_ticket_checker.py "$BODY" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
+        python ./main/script/jira_ticket_checker.py "${{ github.event.pull_request.body }}" # && chmod +x ./script/adf_sync.sh && ./script/adf_sync.sh ${{ vars.SSH_KEY_PHRASE }}
       shell: bash
