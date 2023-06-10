@@ -2,7 +2,7 @@ import sys, json
 pr_comment = sys.argv[1]
 valid_statuses = ['In Progress', 'In Development']
 
-f = open('jira_tickets.json')
+f = open('./main/script/jira_tickets.json')
 
 data = json.load(f)
 
