@@ -3,16 +3,18 @@ name: Update Lower ADF Environments
 #
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-  pull_request:
-
 jobs:
   push_adf_changes:
     runs-on: ubuntu-latest
     environment: dev
     steps:
+    - name: print body
+      env:
+        BODY: ${{ github.event.comment.body }}
+      run: echo "$BODY"
     - uses: actions/checkout@v2
       name: Checout previous commit
       with:
