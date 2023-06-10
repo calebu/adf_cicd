@@ -14,9 +14,7 @@ for i in data:
     print(f'Ticket: {i["ticket"]}, Status: {i["status"]}')
     if i['ticket'] == pr_comment and i['status'] in valid_statuses:
         print(0)
-    
-    if i['ticket'] == pr_comment:
-        print(f'Status: {i["status"]}')
+        exit()
     
 f.close()
 print(1)
