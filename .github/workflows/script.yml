@@ -3,6 +3,9 @@ name: Update Lower ADF Environments
 #
 
 on:
+#  push:
+#    branches:
+#      - main
   pull_request:
     branches:
       - main
@@ -13,16 +16,17 @@ jobs:
     steps:
     - name: print body
       env:
-        BODY: ${{ github.event.comment.body }}
+#        BODY: ${{ toJson(github) }}
+        BODY: ${{ github.event.pull_request.body }}
       run: echo "$BODY"
       shell: bash
     - uses: actions/checkout@v2
-      name: Checout previous commit
+      name: Checkout previous commit
       with:
         ref: adf_documentation
         path: adf_documentation
     - uses: actions/checkout@v2
-      name: Checout current commit
+      name: Checkout current commit
       with:
         ref: main
         path: main
