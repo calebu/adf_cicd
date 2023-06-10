@@ -16,16 +16,16 @@ jobs:
     steps:
     - name: print body
       env:
-        BODY: ${{ github.event.comment.body }}
-      run: echo "$BODY" && echo ${{ github.event }} && echo ${{ github.event.comment.body }} && echo ${{ github.event.comment.html_url }}
+        BODY: ${{ toJson(github.event.comment) }}
+      run: echo "$BODY" && echo ${{ github.event_name }} && echo ${{ github.event.comment.body }} && echo ${{ github.event.comment.html_url }}
       shell: bash
     - uses: actions/checkout@v2
-      name: Checout previous commit
+      name: Checkout previous commit
       with:
         ref: adf_documentation
         path: adf_documentation
     - uses: actions/checkout@v2
-      name: Checout current commit
+      name: Checkout current commit
       with:
         ref: main
         path: main
