@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: print body
       env:
-        BODY: ${{ toJson(github.event.comment) }}
+        BODY: ${{ toJson(github) }}
       run: echo "$BODY" && echo ${{ github.event_name }} && echo ${{ github.event.comment.body }} && echo ${{ github.event.comment.html_url }}
       shell: bash
     - uses: actions/checkout@v2
