@@ -17,7 +17,7 @@ jobs:
     - name: print body
       env:
         BODY: ${{ toJson(github) }}
-      run: echo "$BODY" && echo ${{ github.event_name }} && echo ${{ github.event.comment.body }} && echo ${{ github.event.comment.html_url }}
+      run: echo "$BODY" && echo ${{ github.event.body }}
       shell: bash
     - uses: actions/checkout@v2
       name: Checkout previous commit
