@@ -10,6 +10,8 @@ for i in data:
 	if i['ticket'] == pr_comment && i['status'] in valid_statuses:
 		print(0)
 	
-
+	if i['ticket'] == pr_comment:
+		print(f'Status: {i["status"]}')
+	
 f.close()
 print(1)
