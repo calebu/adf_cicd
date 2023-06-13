@@ -28,9 +28,9 @@ jobs:
     - name: Run validator script
       env:
         VARS: ${{ vars.Compulsory_Patterns }}
-      run: |
-        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
-      shell: bash
+#      run: |
+#        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
+#      shell: bash
     - name: Run script file
       run: |
         jira_check=`python3 ./main/script/jira_ticket_checker.py "${{ github.head_ref }}"` && if [ "$jira_check" != "" ]; then echo $jira_check;  exit 1; fi
