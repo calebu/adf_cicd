@@ -7,12 +7,43 @@ vars_ = json.loads(sys.argv[5])
 print(json.dumps(vars_))
 print(vars_['pipelines'])
 
+pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
+ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
+triggers_pattern = vars_['triggers'] if 'triggers' in vars_ else []
+linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ else []
+datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
+
+print(pipeline_pattern, ir_pattern, triggers_pattern, linkedServices_pattern, linkedServices_pattern)
+
 s = set(new_commit)
-dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith("/pipeline/Data_Archival")]
-dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/")]
-dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/dataset/")]
-dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith("/linkedService")]
-dropped_factory = [x for x in prev_commit if x not in s and x.startswith("/factory/")]
+
+dropped_pipelines = []
+for a_pattern in pipeline_pattern:
+  dropped_pipelines = dropped_pipelines + [x for x in prev_commit if x not in s and x.startswith("/pipeline/" + a_pattern)]
+
+dropped_IR = []
+for a_pattern in pipeline_pattern:
+  dropped_IR = dropped_IR + [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/" + a_pattern)]
+
+dropped_triggers = []
+for a_pattern in pipeline_pattern:
+  dropped_triggers = dropped_triggers + [x for x in prev_commit if x not in s and x.startswith("/triggers/" + a_pattern)]
+
+dropped_datasets = []
+for a_pattern in pipeline_pattern:
+  dropped_datasets = dropped_datasets + [x for x in prev_commit if x not in s and x.startswith("/datasets/" + a_pattern)]
+
+dropped_linkedServices = []
+for a_pattern in pipeline_pattern:
+  dropped_linkedServices = dropped_linkedServices + [x for x in prev_commit if x not in s and x.startswith("/linkedService/" + a_pattern)]
+
+
+print(dropped_IR, dropped_datasets, dropped_linkedServices, dropped_factory)
+
+#dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/")]
+#dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/datasets/")]
+#dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith("/linkedService")]
+#dropped_factory = [x for x in prev_commit if x not in s and x.startswith("/factory/")]
 
 
 if len(dropped_pipelines) > 0:
