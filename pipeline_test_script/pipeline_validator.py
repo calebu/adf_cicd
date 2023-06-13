@@ -4,7 +4,7 @@ new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
 print(sys.argv[5])
 #vars_ = json.loads(sys.argv[5])
-###
+"""
 print(json.dumps(vars_))
 print(vars_['pipelines'])
 
@@ -57,4 +57,4 @@ if len(dropped_linkedServices) > 0:
   print(f'Merge blocked, the following compulsory LinkedServices were deleted {dropped_linkedServices}')
 if len(dropped_factory) > 0:
   print(f'Merge blocked, the following compulsory Data Factory resource were deleted {dropped_factory}')
-###
+"""
