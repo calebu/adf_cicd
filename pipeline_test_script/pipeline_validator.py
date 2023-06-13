@@ -2,7 +2,7 @@ import sys
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
-print(sys.argv[5])
+print(sys.argv[5]) 
 
 s = set(new_commit)
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith("/pipeline/Data_Archival")]
