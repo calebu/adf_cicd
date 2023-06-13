@@ -26,7 +26,7 @@
 + Prod Deployment
   ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
   - *Github actions listens on the creation of a release branch*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png) 
 
 
 ### [Footnotes](https://github.com/pointclickcare/data-archival/) 
