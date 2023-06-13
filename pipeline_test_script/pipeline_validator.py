@@ -4,7 +4,7 @@ new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
 print(sys.argv[5])
 #vars_ = json.loads(sys.argv[5])
-print(json.dumps(vars_))
+#print(json.dumps(vars_))
 
 s = set(new_commit)
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith("/pipeline/Data_Archival")]
