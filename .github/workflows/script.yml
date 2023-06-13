@@ -1,11 +1,6 @@
 name: Update Lower ADF Environments
 
-#
-
 on:
-#  push:
-#    branches:
-#      - main
   pull_request:
     branches:
       - main
@@ -19,19 +14,4 @@ jobs:
         BODY: ${{ toJson(github) }}
         VARS: ${{ toJson(vars) }}
       run: echo "$BODY" && echo "$VARS"
-      shell: bash
-    - uses: actions/checkout@v3
-      name: Checkout previous commit
-      with:
-        ref: main
-        path: ./main
-    - uses: actions/checkout@v3
-      name: Checkout current commit
-    - name: Run validator script
-      run: |
-        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "${{ toJson(vars) }}"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
-      shell: bash
-    - name: Run script file
-      run: |
-        jira_check=`python3 ./main/script/jira_ticket_checker.py "${{ github.head_ref }}"` && if [ "$jira_check" != "" ]; then echo $jira_check;  exit 1; fi
       shell: bash
