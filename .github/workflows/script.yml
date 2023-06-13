@@ -20,16 +20,13 @@ jobs:
         VARS: ${{ toJson(vars) }}
       run: echo "$BODY" && echo "$VARS"
       shell: bash
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       name: Checkout previous commit
       with:
-        ref: adf_documentation
-        path: adf_documentation
-    - uses: actions/checkout@v2
-      name: Checkout current commit
-      with:
         ref: main
-        path: main
+        path: ./main
+    - uses: actions/checkout@v3
+      name: Checkout current commit
     - name: Run validator script
       run: |
         merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main/adf -type f)" "$(find ./adf -type f)" ./main/adf ./adf "${{ toJson(vars) }}"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
