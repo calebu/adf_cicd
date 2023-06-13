@@ -5,7 +5,7 @@ new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 #print(sys.argv[5])
 vars_ = json.loads(sys.argv[5])
 print(json.dumps(vars_))
-print(vars_['pipelines'])
+#print(vars_['pipelines'])
 
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
