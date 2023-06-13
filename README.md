@@ -31,6 +31,6 @@
 
 ### [Footnotes](https://github.com/pointclickcare/data-archival/) 
 
-- All Integration Runtimes must be of the same type, else the deployment will fail link[^first].
+- All Integration Runtimes must be of the same type, else the deployment will fail link[^first]. 
 
 [^first]: Valid IR types are: shared, Azure integration runtime, Self-hosted integration runtime, Azure-SQL Server Integration Services (SSIS) integration runtime
