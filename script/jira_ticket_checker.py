@@ -1,5 +1,5 @@
 import sys, json
-pr_comment = sys.argv[1]
+pr_comment = sys.argv[1].strip()
 valid_statuses = ['In Progress', 'In Development']
 
 f = open('./main/script/jira_tickets.json')
@@ -14,3 +14,5 @@ for i in data:
     
 f.close()
 print(f"JIRA ticket {pr_comment} not found, or JIRA ticket not in Progress/Development state")
+
+
