@@ -12,7 +12,7 @@ jobs:
     - name: print body
       env:
         BODY: ${{ toJson(github) }}
-        VARS: ${{ toJson(vars) }}
+        VARS: ${{ vars.Compulsory_Patterns }}
       run: echo "$BODY" && echo "$VARS"
       shell: bash
     - uses: actions/checkout@v3
@@ -26,8 +26,10 @@ jobs:
         ref: main
         path: ./main
     - name: Run validator script
+      env:
+        VARS: ${{ vars.Compulsory_Patterns }}
       run: |
-        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "${{ vars.Compulsory_Patterns }}"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
+        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
       shell: bash
     - name: Run script file
       run: |
