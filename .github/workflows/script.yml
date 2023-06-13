@@ -30,6 +30,10 @@ jobs:
       with:
         ref: main
         path: main
+    - name: Run validator script
+      run: |
+        merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main/adf -type f)" "$(find ./adf -type f)" ./main/adf ./adf "${{ toJson(vars) }}"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
+      shell: bash
     - name: Run script file
       run: |
         jira_check=`python3 ./main/script/jira_ticket_checker.py "${{ github.head_ref }}"` && if [ "$jira_check" != "" ]; then echo $jira_check;  exit 1; fi
