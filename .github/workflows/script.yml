@@ -21,9 +21,9 @@ jobs:
         path: ./main
     - name: Run validator script
       env:
-        VARS: ${{ vars }}
+        allVars: ${{ github }}
       run: |
-        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
+        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $allVars)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
       shell: bash
     - name: Run script file
       run: |
