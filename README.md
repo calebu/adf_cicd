@@ -5,31 +5,31 @@
 + Workflow overview
   ![ADF github connection](https://github.com/calebu/adf_cicd/blob/main/documentation/workflow.png)
 + Initial setup (connecting the dev instance to the github repo)
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/git.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/git.png)
 + ADF authoring
   - *feature branch creation*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/feature-branch.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/feature-branch.png)
   - *global parameters*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/global-parameters.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/global-parameters.png)
 + Pull Request
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/pr.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/pr.png)
   - *Scenario 1 - PR is approved*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
   - *Scenario 2 - Review is requested*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
   - *Scenario 3 - PR is rejected*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
 + Merge to master branch
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
   - *what happens in the background - github actions get triggered*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
 + Prod Deployment
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
   - *Github actions listens on the creation of a release branch*
-  ![ADF Authoring](https://github.com/pointclickcare/data-archival/blob/main/documentation/adf-authoring.png)
+  ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
 
 
-### [Footnotes](https://github.com/pointclickcare/data-archival/) 
+### [Footnotes](https://github.com/demo_org/data-archival/) 
 
 - All Integration Runtimes must be of the same type, else the deployment will fail link[^first].
 
