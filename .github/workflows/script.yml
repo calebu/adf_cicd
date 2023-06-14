@@ -9,12 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
-    - name: print body
-      env:
-        BODY: ${{ toJson(github) }}
-        VARS: ${{ vars.Compulsory_Patterns }}
-      run: echo "$BODY" && echo "$VARS"
-      shell: bash
     - uses: actions/checkout@v3
       name: Checkout new commit
       with:
@@ -27,7 +21,7 @@ jobs:
         path: ./main
     - name: Run validator script
       env:
-        VARS: ${{ vars.Compulsory_Patterns }}
+        VARS: ${{ vars }}
       run: |
         ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
       shell: bash
