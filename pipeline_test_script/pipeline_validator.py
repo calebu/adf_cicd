@@ -2,12 +2,25 @@ import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
-e = str(sys.argv[5].replace('\\"', '"')[0:])
-d = '{"pipelines":"Data_Archival"}'
-print(d)
-print(e)
-print(d == e)
-vars_ = json.loads(d)
+string = sys.argv[5].replace('\\"', '"')
+s = string.replace("{" ,"")
+finalstring = s.replace("}" , "")
+
+#Splitting the string based on , we get key value pairs
+list = finalstring.split(",")
+
+dictionary ={}
+for i in list:
+    #Get Key Value pairs separately to store in dictionary
+    keyvalue = i.split(":")
+
+    #Replacing the single quotes in the leading.
+    m= keyvalue[0].strip('\'')
+    m = m.replace("\"", "")
+    dictionary[m] = keyvalue[1].strip('"\'')
+
+print dictionary
+vars_ = json.loads(dictionary)
 print(vars_)
 print(vars_['pipelines'] + 'caleb' + json.dumps(vars_))
 
