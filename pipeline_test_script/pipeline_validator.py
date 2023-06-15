@@ -6,7 +6,7 @@ print(sys.argv[5])
 print(sys.argv[5].replace('\\"', "'"))
 vars_ = eval(sys.argv[5].replace('\\"', "'"))
 print(vars_)
-print(vars_[0] + 'caleb' + vars_ + )
+print(vars_[0] + 'caleb' + vars_)
 
 """
 print(json.dumps(vars_))
