@@ -7,7 +7,7 @@ d = '{"pipelines":"Data_Archival"}'
 print(d == sys.argv[5].replace('\\"', '"'))
 vars_ = json.loads(d)
 print(vars_)
-print(vars_['pipeline'] + 'caleb' + vars_)
+print(vars_['pipelines'] + 'caleb' + vars_)
 
 """
 print(json.dumps(vars_))
