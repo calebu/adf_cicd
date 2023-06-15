@@ -4,8 +4,7 @@ new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
 #print(sys.argv[5])
 vars_ = json.loads(sys.argv[5])
-aVar = json.loads(vars_[0])
-print(aVar)
+print(vars_)
 #print(vars_["pipelines"])
 
 """
