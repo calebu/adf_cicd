@@ -68,5 +68,5 @@ if len(dropped_datasets) > 0:
   print(f'Merge blocked, the following compulsory datasets were deleted {dropped_datasets}')
 if len(dropped_linkedServices) > 0:
   print(f'Merge blocked, the following compulsory LinkedServices were deleted {dropped_linkedServices}')
-if len(dropped_factory) > 0:
-  print(f'Merge blocked, the following compulsory Data Factory resource were deleted {dropped_factory}')
+if len(dropped_triggers) > 0:
+  print(f'Merge blocked, the following compulsory triggers were deleted {dropped_triggers}')
