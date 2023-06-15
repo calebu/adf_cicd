@@ -52,7 +52,7 @@ for a_pattern in pipeline_pattern:
   dropped_linkedServices = dropped_linkedServices + [x for x in prev_commit if x not in s and x.startswith("/linkedService/" + a_pattern)]
 
 
-print(dropped_IR, dropped_datasets, dropped_linkedServices, dropped_factory)
+print(dropped_IR, dropped_datasets, dropped_linkedServices, dropped_triggers)
 
 #dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/")]
 #dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/datasets/")]
