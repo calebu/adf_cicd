@@ -70,4 +70,3 @@ if len(dropped_linkedServices) > 0:
   print(f'Merge blocked, the following compulsory LinkedServices were deleted {dropped_linkedServices}')
 if len(dropped_factory) > 0:
   print(f'Merge blocked, the following compulsory Data Factory resource were deleted {dropped_factory}')
-"""
