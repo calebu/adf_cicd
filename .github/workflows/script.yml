@@ -23,7 +23,7 @@ jobs:
       env:
         VARS: ${{ toJson(vars.COMPULSORY_ADF_COMPONENTS) }}
       run: |
-        ls && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ '$(echo $VARS)'` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
+        echo $VARS && merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ '$(echo $VARS)'` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
       shell: bash
     - name: Run script file
       run: |
