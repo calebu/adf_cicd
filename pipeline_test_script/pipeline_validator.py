@@ -20,13 +20,11 @@ for i in list:
     dictionary[m] = keyvalue[1].strip('"\'')
 
 print(dictionary)
-vars_ = json.loads(dictionary)
-print(vars_)
-print(vars_['pipelines'] + 'caleb' + json.dumps(vars_))
+print(dictionary['pipelines'] + 'caleb')
 
 """
 print(json.dumps(vars_))
-print(vars_['pipelines'])
+print(dictionary['pipelines'])
 
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
