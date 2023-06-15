@@ -9,7 +9,7 @@ finalstring = s.replace("}" , "")
 #Splitting the string based on , we get key value pairs
 list = finalstring.split(",")
 
-dictionary ={}
+vars_ ={}
 for i in list:
     #Get Key Value pairs separately to store in dictionary
     keyvalue = i.split(":")
@@ -17,14 +17,9 @@ for i in list:
     #Replacing the single quotes in the leading.
     m= keyvalue[0].strip('\'')
     m = m.replace("\"", "")
-    dictionary[m] = keyvalue[1].strip('"\'')
+    vars_[m] = keyvalue[1].strip('"\'')
 
-print(dictionary)
-print(dictionary['pipelines'] + 'caleb')
-
-"""
-print(json.dumps(vars_))
-print(dictionary['pipelines'])
+print(vars_)
 
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
