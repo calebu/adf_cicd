@@ -29,7 +29,7 @@
   ![ADF Authoring](https://github.com/demo_org/data-archival/blob/main/documentation/adf-authoring.png)
 
 
-### [Footnotes](https://github.com/demo_org/data-archival/) 
+### [Footnotes](https://github.com/demo_org/data-archival/)
 
 - All Integration Runtimes must be of the same type, else the deployment will fail link[^first].
 
