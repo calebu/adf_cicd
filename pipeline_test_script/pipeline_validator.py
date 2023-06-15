@@ -2,8 +2,9 @@ import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
-print(sys.argv[5])
 print(sys.argv[5].replace('\\"', '"'))
+d = sys.argv[5].replace('\\"', '"')[0:]
+print(d)
 vars_ = eval(sys.argv[5].replace('\\"', '"'))
 print(vars_)
 print(vars_[0] + 'caleb' + vars_)
