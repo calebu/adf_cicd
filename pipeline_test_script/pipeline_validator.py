@@ -3,11 +3,11 @@ prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
 print(sys.argv[5].replace('\\"', '"'))
-d = sys.argv[5].replace('\\"', '"')[0:]
-print(d)
-vars_ = eval(d)
+d = '{"pipelines":"Data_Archival"}'
+print(d == sys.argv[5].replace('\\"', '"'))
+vars_ = json.loads(d)
 print(vars_)
-print(vars_[0] + 'caleb' + vars_)
+print(vars_['pipeline'] + 'caleb' + vars_)
 
 """
 print(json.dumps(vars_))
