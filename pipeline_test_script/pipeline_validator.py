@@ -19,7 +19,7 @@ for i in list:
     m = m.replace("\"", "")
     dictionary[m] = keyvalue[1].strip('"\'')
 
-print dictionary
+print(dictionary)
 vars_ = json.loads(dictionary)
 print(vars_)
 print(vars_['pipelines'] + 'caleb' + json.dumps(vars_))
