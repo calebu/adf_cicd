@@ -3,7 +3,8 @@ prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
 print(sys.argv[5])
-vars_ = json.loads(sys.argv[5].replace('\\"', "'"))
+print(sys.argv[5].replace('\\"', "'"))
+vars_ = json.loads(sys.argv[5])
 print(vars_)
 #print(vars_["pipelines"])
 
