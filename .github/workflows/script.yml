@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v3
       name: Checkout json file repo
       with:
-        repository: kafka
+        repository: calebu/kafka
         path: json-file-repo        
     - name: Run validator script
       env:
@@ -30,7 +30,7 @@ jobs:
       run: |
         merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./ -type f)" ./main ./ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
       shell: bash
-    - name: Run script file
+    - name: Run jira validator script
       run: |
         jira_check=`python3 ./main/script/jira_ticket_checker.py "${{ github.head_ref }}"` && if [ "$jira_check" != "" ]; then echo $jira_check;  exit 1; fi
       shell: bash
