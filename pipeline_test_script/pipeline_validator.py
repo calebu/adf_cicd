@@ -2,8 +2,8 @@ import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
-string = sys.argv[5].replace('\\"', '"')
-s = string.replace("{" ,"")
+compulsory_components = sys.argv[5].replace('\\"', '"')
+s = compulsory_components.replace("{" ,"")
 finalstring = s.replace("}" , "")
 
 #Splitting the string based on , we get key value pairs
