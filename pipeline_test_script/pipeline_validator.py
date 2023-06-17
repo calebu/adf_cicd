@@ -25,10 +25,13 @@ triggers_pattern = vars_['triggers'] if 'triggers' in vars_ else []
 linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ else []
 datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 
+
+print(pipeline_pattern, ir_pattern, triggers_pattern, linkedServices_pattern, datasets_pattern)
 s = set(new_commit)
 
 dropped_pipelines = []
 for a_pattern in pipeline_pattern:
+  print(a_pattern)
   dropped_pipelines = dropped_pipelines + [x for x in prev_commit if x not in s and x.startswith("/pipeline/" + a_pattern)]
 
 dropped_IR = []
