@@ -19,15 +19,11 @@ for i in list:
     m = m.replace("\"", "")
     vars_[m] = keyvalue[1].strip('"\'')
 
-print(vars_)
-
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
 triggers_pattern = vars_['triggers'] if 'triggers' in vars_ else []
 linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ else []
 datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
-
-print(pipeline_pattern, ir_pattern, triggers_pattern, linkedServices_pattern, linkedServices_pattern)
 
 s = set(new_commit)
 
