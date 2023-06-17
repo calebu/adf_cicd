@@ -36,20 +36,20 @@ for a_pattern in pipeline_pattern:
   dropped_pipelines = dropped_pipelines + [x for x in prev_commit if x not in s and x.startswith("/pipeline/" + a_pattern)]
 
 dropped_IR = []
-for a_pattern in pipeline_pattern:
+for a_pattern in ir_pattern:
   print("/integrationRuntime/" + a_pattern)
   dropped_IR = dropped_IR + [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/" + a_pattern)]
 
 dropped_triggers = []
-for a_pattern in pipeline_pattern:
+for a_pattern in triggers_pattern:
   dropped_triggers = dropped_triggers + [x for x in prev_commit if x not in s and x.startswith("/triggers/" + a_pattern)]
 
 dropped_datasets = []
-for a_pattern in pipeline_pattern:
+for a_pattern in datasets_pattern:
   dropped_datasets = dropped_datasets + [x for x in prev_commit if x not in s and x.startswith("/datasets/" + a_pattern)]
 
 dropped_linkedServices = []
-for a_pattern in pipeline_pattern:
+for a_pattern in linkedServices_pattern:
   dropped_linkedServices = dropped_linkedServices + [x for x in prev_commit if x not in s and x.startswith("/linkedService/" + a_pattern)]
 
 
