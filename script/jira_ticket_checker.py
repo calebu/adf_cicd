@@ -2,7 +2,7 @@ import sys, json
 pr_comment = sys.argv[1].strip()
 valid_statuses = ['In Progress', 'In Development']
 
-f = open('./main/jira_validator_script/jira_tickets.json')
+f = open('./json-file-repo/jira_tickets.json')
 
 data = json.load(f)
 #Find the ticket and status
