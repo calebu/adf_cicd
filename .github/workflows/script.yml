@@ -19,6 +19,11 @@ jobs:
       with:
         ref: main
         path: ./main
+    - uses: actions/checkout@v3
+      name: Checkout json file repo
+      with:
+        repository: kafka
+        path: json-file-repo        
     - name: Run validator script
       env:
         VARS: ${{ toJson(vars.COMPULSORY_ADF_COMPONENTS) }}
