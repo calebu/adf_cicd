@@ -29,35 +29,12 @@ datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 print(pipeline_pattern, ir_pattern, triggers_pattern, linkedServices_pattern, datasets_pattern)
 s = set(new_commit)
 
-dropped_pipelines = []
-for a_pattern in pipeline_pattern:
-  print(a_pattern)
-  dropped_pipelines = dropped_pipelines + [x for x in prev_commit if x not in s and x.startswith("/pipeline/" + a_pattern)]
-
-dropped_IR = []
-for a_pattern in ir_pattern:
-  print("/integrationRuntime/" + a_pattern)
-  dropped_IR = dropped_IR + [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/" + a_pattern)]
-
-dropped_triggers = []
-for a_pattern in triggers_pattern:
-  dropped_triggers = dropped_triggers + [x for x in prev_commit if x not in s and x.startswith("/triggers/" + a_pattern)]
-
-dropped_datasets = []
-for a_pattern in datasets_pattern:
-  dropped_datasets = dropped_datasets + [x for x in prev_commit if x not in s and x.startswith("/datasets/" + a_pattern)]
-
-dropped_linkedServices = []
-for a_pattern in linkedServices_pattern:
-  dropped_linkedServices = dropped_linkedServices + [x for x in prev_commit if x not in s and x.startswith("/linkedService/" + a_pattern)]
-
-
+dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith("/pipeline/")]
+dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/")]
+dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/datasets/")]
+dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith("/linkedService")]
+dropped_triggers = [x for x in prev_commit if x not in s and x.startswith("/trigger/")]
 print(dropped_pipelines, dropped_IR, dropped_datasets, dropped_linkedServices, dropped_triggers)
-
-#dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/")]
-#dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/datasets/")]
-#dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith("/linkedService")]
-#dropped_factory = [x for x in prev_commit if x not in s and x.startswith("/factory/")]
 
 
 if len(dropped_pipelines) > 0:
