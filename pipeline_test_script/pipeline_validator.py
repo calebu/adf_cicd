@@ -19,6 +19,7 @@ for i in list:
     m = m.replace("\"", "")
     vars_[m] = keyvalue[1].strip('"\'')
 
+print(vars_)
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
 triggers_pattern = vars_['triggers'] if 'triggers' in vars_ else []
@@ -29,11 +30,11 @@ datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 print(f'pipeline: {pipeline_pattern}, ir: {ir_pattern}, triggers: {triggers_pattern}, LinkedServices: {linkedServices_pattern}, Datasets: {datasets_pattern}')
 s = set(new_commit)
 
-dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith("/pipeline/")]
-dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integrationRuntime/")]
-dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/datasets/")]
-dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith("/linkedService")]
-dropped_triggers = [x for x in prev_commit if x not in s and x.startswith("/trigger/")]
+dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith('/pipeline/{pipeline_pattern}')]
+dropped_IR = [x for x in prev_commit if x not in s and x.startswith('/integrationRuntime/{ir_pattern}')]
+dropped_datasets = [x for x in prev_commit if x not in s and x.startswith('/datasets/{datasets_pattern}')]
+dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith('/linkedService/{linkedServices_pattern}')]
+dropped_triggers = [x for x in prev_commit if x not in s and x.startswith('/trigger/{triggers_pattern}')]
 print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
 
 
