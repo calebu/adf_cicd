@@ -1,6 +1,8 @@
 import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
+print(prev_commit)
+print(new_commit)
 
 compulsory_components = sys.argv[5].replace('\\"', '"')
 s = compulsory_components.replace("{" ,"")
@@ -27,7 +29,7 @@ datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 
 s = set(new_commit)
 prev_commit = set(prev_commit)
-print([x for x in prev_commit if x not in s])
+#print([x for x in prev_commit if x not in s])
 
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith(f'/pipeline/{pipeline_pattern}')]
 dropped_IR = [x for x in prev_commit if x not in s and x.startswith(f'/integrationRuntime/{ir_pattern}')]
