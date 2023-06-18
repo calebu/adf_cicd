@@ -2,8 +2,6 @@ import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
-smog = json.loads(sys.argv[5])
-print(smog['pipelines'])
 compulsory_components = sys.argv[5].replace('\\"', '"')
 s = compulsory_components.replace("{" ,"")
 finalstring = s.replace("}" , "")
@@ -19,9 +17,9 @@ for i in list:
     #Replacing the single quotes in the leading.
     m= keyvalue[0].strip('\'')
     m = m.replace("\"", "")
-    vars_[m] = keyvalue[1].strip('"\'')
+    vars_[m] = keyvalue[1].strip().strip('\'').strip('\"').strip('"\'')
 
-#print(vars_)
+print(vars_)
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
 triggers_pattern = vars_['triggers'] if 'triggers' in vars_ else []
