@@ -2,6 +2,7 @@ import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
+print(json.loads(sys.argv[5]))
 compulsory_components = sys.argv[5].replace('\\"', '"')
 s = compulsory_components.replace("{" ,"")
 finalstring = s.replace("}" , "")
