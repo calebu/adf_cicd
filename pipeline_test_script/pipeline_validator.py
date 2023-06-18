@@ -1,8 +1,6 @@
 import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
-print(prev_commit)
-print(new_commit)
 
 compulsory_components = sys.argv[5].replace('\\"', '"')
 s = compulsory_components.replace("{" ,"")
@@ -28,15 +26,13 @@ linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ el
 datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 
 s = set(new_commit)
-prev_commit = set(prev_commit)
-#print([x for x in prev_commit if x not in s])
 
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith(f'/pipeline/{pipeline_pattern}')]
 dropped_IR = [x for x in prev_commit if x not in s and x.startswith(f'/integrationRuntime/{ir_pattern}')]
 dropped_datasets = [x for x in prev_commit if x not in s and x.startswith(f'/datasets/{datasets_pattern}')]
 dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith(f'/linkedService/{linkedServices_pattern}')]
 dropped_triggers = [x for x in prev_commit if x not in s and x.startswith(f'/trigger/{triggers_pattern}')]
-print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
+#print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
 
 
 if len(dropped_pipelines) > 0:
