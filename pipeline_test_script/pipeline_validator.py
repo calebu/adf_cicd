@@ -32,8 +32,6 @@ dropped_IR = [x for x in prev_commit if x not in s and x.startswith(f'/integrati
 dropped_datasets = [x for x in prev_commit if x not in s and x.startswith(f'/datasets/{datasets_pattern}')]
 dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith(f'/linkedService/{linkedServices_pattern}')]
 dropped_triggers = [x for x in prev_commit if x not in s and x.startswith(f'/trigger/{triggers_pattern}')]
-#print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
-
 
 if len(dropped_pipelines) > 0:
   print(f'Merge blocked, the following compulsory pipelines were deleted {dropped_pipelines}')
