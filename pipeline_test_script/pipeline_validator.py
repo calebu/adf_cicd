@@ -26,7 +26,7 @@ linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ el
 datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 
 
-print(pipeline_pattern, ir_pattern, triggers_pattern, linkedServices_pattern, datasets_pattern)
+print(f'pipeline: {pipeline_pattern}, ir: {ir_pattern}, triggers: {triggers_pattern}, LinkedServices: {linkedServices_pattern}, Datasets: {datasets_pattern}')
 s = set(new_commit)
 
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith("/pipeline/")]
@@ -34,7 +34,7 @@ dropped_IR = [x for x in prev_commit if x not in s and x.startswith("/integratio
 dropped_datasets = [x for x in prev_commit if x not in s and x.startswith("/datasets/")]
 dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith("/linkedService")]
 dropped_triggers = [x for x in prev_commit if x not in s and x.startswith("/trigger/")]
-print(dropped_pipelines, dropped_IR, dropped_datasets, dropped_linkedServices, dropped_triggers)
+print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
 
 
 if len(dropped_pipelines) > 0:
