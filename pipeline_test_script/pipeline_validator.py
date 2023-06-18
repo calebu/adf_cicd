@@ -2,7 +2,8 @@ import sys, json
 prev_commit = sys.argv[1].replace(sys.argv[3], '').split('\n')
 new_commit = sys.argv[2].replace(sys.argv[4], '').split('\n')
 
-print(json.loads(sys.argv[5]))
+smog = json.loads(sys.argv[5])
+print(smog['pipelines'])
 compulsory_components = sys.argv[5].replace('\\"', '"')
 s = compulsory_components.replace("{" ,"")
 finalstring = s.replace("}" , "")
@@ -20,7 +21,7 @@ for i in list:
     m = m.replace("\"", "")
     vars_[m] = keyvalue[1].strip('"\'')
 
-print(vars_)
+#print(vars_)
 pipeline_pattern = vars_['pipelines'] if 'pipelines' in vars_ else []
 ir_pattern = vars_['integrationRuntimes'] if 'integrationRuntimes' in vars_ else []
 triggers_pattern = vars_['triggers'] if 'triggers' in vars_ else []
@@ -28,7 +29,7 @@ linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ el
 datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 
 
-print(f'pipeline: {pipeline_pattern}, ir: {ir_pattern}, triggers: {triggers_pattern}, LinkedServices: {linkedServices_pattern}, Datasets: {datasets_pattern}')
+#print(f'pipeline: {pipeline_pattern}, ir: {ir_pattern}, triggers: {triggers_pattern}, LinkedServices: {linkedServices_pattern}, Datasets: {datasets_pattern}')
 s = set(new_commit)
 
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith('/pipeline/{pipeline_pattern}')]
@@ -36,7 +37,7 @@ dropped_IR = [x for x in prev_commit if x not in s and x.startswith('/integratio
 dropped_datasets = [x for x in prev_commit if x not in s and x.startswith('/datasets/{datasets_pattern}')]
 dropped_linkedServices = [x for x in prev_commit if x not in s and x.startswith('/linkedService/{linkedServices_pattern}')]
 dropped_triggers = [x for x in prev_commit if x not in s and x.startswith('/trigger/{triggers_pattern}')]
-print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
+#print(f'Dropped pipelines: {dropped_pipelines}, IR: {dropped_IR}, Datasets: {dropped_datasets}, Linkedservices: {dropped_linkedServices}, Triggers: {dropped_triggers}')
 
 
 if len(dropped_pipelines) > 0:
