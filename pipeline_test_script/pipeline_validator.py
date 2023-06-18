@@ -26,9 +26,7 @@ linkedServices_pattern = vars_['linkedServices'] if 'linkedServices' in vars_ el
 datasets_pattern = vars_['datasets'] if 'datasets' in vars_ else []
 
 s = set(new_commit)
-print(prev_commit)
-print(new_commit)
-print(f'/linkedService/{linkedServices_pattern}')
+print([x for x in prev_commit if x not in s])
 
 dropped_pipelines = [x for x in prev_commit if x not in s and x.startswith(f'/pipeline/{pipeline_pattern}')]
 dropped_IR = [x for x in prev_commit if x not in s and x.startswith(f'/integrationRuntime/{ir_pattern}')]
