@@ -8,6 +8,7 @@ data = json.load(f)
 #Find the ticket and status
 
 for i in data:
+    print(i['ticket'] + str(i['ticket'] in branch_name))
     if i['ticket'] in branch_name and i['status'] in valid_statuses:
         print("")
         exit()
