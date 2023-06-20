@@ -26,7 +26,7 @@ jobs:
         path: json-file-repo        
     - name: Run validator script
       env:
-        VARS: ${{ toJson(vars.COMPULSORY_ADF_COMPONENTS) }}
+        VARS: ${{ vars.COMPULSORY_ADF_COMPONENTS }}
       run: |
         merge_check=`python3 main/pipeline_test_script/pipeline_validator.py "$(find ./main -type f)" "$(find ./new_commit -type f)" ./main/ ./new_commit/ "$(echo $VARS)"` && if [ "$merge_check" != "" ]; then echo $merge_check;  exit 1; fi
       shell: bash
