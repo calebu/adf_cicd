@@ -12,18 +12,81 @@
 						"value": "Hayley"
 					},
 					{
-						"name": "Senior_Engr",
+						"name": "Senior Engr",
 						"value": "Dominic"
 					}
 				],
 				"typeProperties": {
-					"waitTimeInSeconds": 20
+					"waitTimeInSeconds": 2
+				}
+			},
+			{
+				"name": "ForEachActiv",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "chronicles_task",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('InputVar')",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@equals(empty(item().name),true)",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Wait_False",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 1
+										}
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Wait_True",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 1
+										}
+									}
+								]
+							}
+						}
+					]
 				}
 			},
 			{
 				"name": "Fail1",
 				"type": "Fail",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "ForEachActiv",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"message": "Failed",
@@ -31,6 +94,25 @@
 				}
 			}
 		],
+		"variables": {
+			"InputVar": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"name": "caleb"
+					},
+					{
+						"name": "titi"
+					},
+					{
+						"name": "david"
+					},
+					{
+						"name": "daniel"
+					}
+				]
+			}
+		},
 		"annotations": []
 	}
 }
